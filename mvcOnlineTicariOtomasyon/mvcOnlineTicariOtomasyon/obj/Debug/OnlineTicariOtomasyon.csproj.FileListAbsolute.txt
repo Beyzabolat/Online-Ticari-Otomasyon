@@ -1,0 +1,4 @@
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\OnlineTicariOtomasyon.csproj.AssemblyReference.cache
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\OnlineTicariOtomasyon.csproj.CoreCompileInputs.cache
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.dll
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.pdb

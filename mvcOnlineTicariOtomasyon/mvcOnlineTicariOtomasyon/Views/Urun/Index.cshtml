@@ -1,0 +1,47 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.Classes;
+@model List<Urunler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 class="h3 mb-0 text-gray-800">Ürünler</h1>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Marka</th>
+        <th>Stok</th>
+        <th>Alış Fiyat</th>
+        <th>Satış Fiyat</th>
+        <th>Kategori</th>
+        <th>Görsel</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+    </tr>
+    @foreach (var m in Model)
+    {
+        <tr>
+            <td>@m.UrunID</td>
+            <td>@m.UrunAdi</td>
+            <td>@m.Marka</td>
+            <td>@m.Stok</td>
+            <td>@m.AlisFiyati</td>
+            <td>@m.SatisFiyati</td>
+            <td>@m.Kategori.KategoriAd</td>
+            <td>@m.UrunGorsel</td>
+            <td>
+                <a href="/Urun/UrunSilme/@m.UrunID" class="btn btn-danger">Sil</a>
+            </td>
+            <td><a href="/Urun/UrunGetirme/@m.UrunID" class="btn btn-success">Güncelle</a></td>
+
+        </tr>
+
+    }
+
+
+</table>
+
+

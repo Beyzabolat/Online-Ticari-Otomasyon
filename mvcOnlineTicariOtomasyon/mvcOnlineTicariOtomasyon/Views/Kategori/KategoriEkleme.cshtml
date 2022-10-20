@@ -1,0 +1,15 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.Classes.Kategori
+
+
+@{
+    ViewBag.Title = "KategoriEkleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1 class="h3 mb-0 text-gray-800">Kategori Ekleme Sayfası</h1>
+<br />
+<form class="form-group" method="post">
+    @Html.LabelFor(x => x.KategoriAd)
+    @Html.TextBoxFor(x=>x.KategoriAd, new { @class = "form-control" } )    @*lamda operation*@
+    </br>
+    <button class="btn btn-info">Kaydet</button>
+</form>

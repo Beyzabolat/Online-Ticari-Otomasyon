@@ -1,0 +1,49 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.Classes
+@model List<SatisHareketi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1 class="h3 mb-0 text-gray-800">Satış Hareketleri</h1>
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Adet</th>
+        <th>Fiyat</th>
+        <th>Toplam Tutar</th>
+        <th>Tarih</th>
+        <th>Güncelle</th> 
+        <th>Detaylar</th>
+
+    </tr>
+    @foreach (var b in Model)
+    {
+        <tr>
+            <td>@b.SatisID</td>
+            <td>@b.Urunler.UrunAdi</td>
+            <td>@b.Cari.CariAd</td>
+            <td>@b.Personel.PersonelAd</td>
+            <td>@b.Adet</td>
+            <td>@b.Fiyat</td>
+            <td>@b.ToplamTutar</td>
+            <td>@b.Tarih</td>
+
+            <td><a href="/Personel/PersonelGetirme/@b.Personelid" class="btn btn-success">Güncelle</a></td>
+            <td>
+                <a href="/Departman/DepartmanPersonelSatis/@b.Personelid" class="btn btn-group"
+                   style="background-color: #35B8FF; color: white; ">Detaylar</a>
+            </td>
+        </tr>
+    }
+
+</table>
+
+<a href="/Satis/YeniSatis" class="btn btn-info">Yeni Satış Yap</a>
+
