@@ -8,7 +8,7 @@ namespace mvcOnlineTicariOtomasyon.Controllers
 {
     public class UrunController : Controller
     {
-        // GET: Urun
+
         Context q = new Context();
         public ActionResult Index()
         {
@@ -70,6 +70,41 @@ namespace mvcOnlineTicariOtomasyon.Controllers
             q.SaveChanges();
             return RedirectToAction("Index");
 
+        }
+        public ActionResult UrunListesi()
+        {
+            var deegerler = q.Urunlers.ToList();
+            return View(deegerler);
+        }
+        [HttpGet]
+        public ActionResult SatisYap(int id)
+        {
+            List<SelectListItem> deger2 = (from x in q.Personels.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.PersonelAd + " " + x.PersonelSoyad,
+                                               Value = x.PersonelID.ToString()
+                                           }).ToList(); 
+            List<SelectListItem> deger4 = (from x in q.Caris.ToList()
+                                           select new SelectListItem
+                                           {
+                                               Text = x.CariAd + " " + x.CariSoyad,
+                                               Value = x.CariID.ToString()
+                                           }).ToList();
+            ViewBag.dgr2 = deger2;
+            var deger1 = q.Urunlers.Find(id);
+            ViewBag.dgr1 = deger1.UrunID;
+            ViewBag.dgr3 = deger1.SatisFiyati;
+            ViewBag.dgr4 = deger4;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SatisYap(SatisHareketi p)
+        {
+            p.Tarih = DateTime.Parse(DateTime.Now.ToShortDateString());
+            q.SatisHareketis.Add(p);
+            q.SaveChanges();
+            return RedirectToAction("Index" , "Satis");
         }
     }
 }

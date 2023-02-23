@@ -1,0 +1,30 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.Classes.FaturaKalem
+
+@{
+    ViewBag.Title = "KalemEkleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="h3 mb-0 text-gray-800">Kalem Ekleme Sayfası</h1>
+<br />
+
+
+<form class="form-group" method="post">
+    @Html.Label("Açıklama")
+    @Html.TextBoxFor(x => x.Aciklama, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+
+    @Html.Label("Miktar")
+    @Html.TextBoxFor(x => x.Miktar, new { @class = "form-control" })
+    <br />
+    @Html.Label("Birim Fiyat")
+    @Html.TextBoxFor(x => x.Birimfiyat, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    @Html.Label("Tutar")
+    @Html.TextBoxFor(x => x.Tutar, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    @Html.Label("fatura ID")
+    @Html.TextBoxFor(x => x.Faturaid, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    <button class="btn btn-info">Kaydet</button>
+</form>

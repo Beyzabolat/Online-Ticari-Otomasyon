@@ -6,29 +6,17 @@ using System.Web.Mvc;
 using mvcOnlineTicariOtomasyon.Models.Classes;
 namespace mvcOnlineTicariOtomasyon.Controllers
 {
+    [Authorize]
     public class DepartmanController : Controller
     {
         // GET: Departman
         Context q = new Context();
         public ActionResult Index()
         {
-            var degerler = q.Departmans.Where(x => x.Durum == true).ToList();
+            var degerler = q.Departmen.Where(x => x.Durum == true).ToList();
 
             return View(degerler);
         }
-        //[HttpGet]  //sayfa çalıştığında boş olarak bunu açacak
-        //public ActionResult DepartmanEkleme()
-        //{
-        //    return View();
-
-        //}
-        //[HttpPost] //butona tıklandığında çalışacak
-        //public ActionResult KategoriEkleme(Kategori b)
-        //{
-        //    q.Kategoris.Add(b);
-        //    q.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
         [HttpGet]
         public ActionResult DepartmanEkleme()
         {
@@ -38,10 +26,11 @@ namespace mvcOnlineTicariOtomasyon.Controllers
 
 
         [HttpPost]
+
         public ActionResult DepartmanEkleme(Departman d)
         {
             d.Durum = true;
-            q.Departmans.Add(d);
+            q.Departmen.Add(d);
             q.SaveChanges();
             return RedirectToAction("Index");
 
@@ -49,7 +38,7 @@ namespace mvcOnlineTicariOtomasyon.Controllers
         }
         public ActionResult DepartmanSilme(int id)
         {
-            var depa = q.Departmans.Find(id);
+            var depa = q.Departmen.Find(id);
             depa.Durum = false;
             q.SaveChanges();
             return RedirectToAction("Index");
@@ -57,12 +46,12 @@ namespace mvcOnlineTicariOtomasyon.Controllers
 
         public ActionResult DepartmanGetirme(int id)
         {
-            var dprtmn = q.Departmans.Find(id);
+            var dprtmn = q.Departmen.Find(id);
             return View("DepartmanGetirme", dprtmn);
         }
         public ActionResult DepartmanGuncelleme(Departman b)
         {
-            var dprt = q.Departmans.Find(b.DepartmanID);
+            var dprt = q.Departmen.Find(b.DepartmanID);
             dprt.DepartmanAd = b.DepartmanAd;
             q.SaveChanges();
             return RedirectToAction("Index");
@@ -73,7 +62,7 @@ namespace mvcOnlineTicariOtomasyon.Controllers
         {
             var degerler = q.Personels.Where(x => x.Departmanid == id).ToList();
             
-            var dpt = q.Departmans.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
+            var dpt = q.Departmen.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAd).FirstOrDefault();
             
             ViewBag.d = dpt;
             return View(degerler);

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using mvcOnlineTicariOtomasyon.Models.Classes;
+using PagedList;
+using PagedList.Mvc;
 namespace mvcOnlineTicariOtomasyon.Controllers
 
 {
@@ -20,22 +22,52 @@ namespace mvcOnlineTicariOtomasyon.Controllers
         public ActionResult KategoriEkleme()
         {
             return View();
-           
-        } 
+
+        }
         [HttpPost] //butona tıklandığında çalışacak
         public ActionResult KategoriEkleme(Kategori b)
         {
+
             q.Kategoris.Add(b);
             q.SaveChanges();
+
+            TempData["kategoriekleme"] = "kayıt başarılı ";
             return RedirectToAction("Index");
+
         }
+
+       
         public ActionResult KategoriSilme(int id)
         {
-            var kategri = q.Kategoris.Find(id);
-                q.Kategoris.Remove(kategri);
-            q.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                
+                
+                    var kategri = q.Kategoris.Find(id);
+                    q.Kategoris.Remove(kategri);
+                    q.SaveChanges();
+                 return RedirectToAction("Index");
+                
+            }
+           
+            catch (Exception)
+            {
+                return RedirectToAction("Index");
+            }
+
+            //TempData["kategorisilme"] = "  ";
+            //var kategri = q.Kategoris.Find(id);
+            //q.Kategoris.Remove(kategri);
+            //q.SaveChanges();
+            //return RedirectToAction("Index");
+
         }
+
+        //var kategri = q.Kategoris.Find(id);
+        //    q.Kategoris.Remove(kategri);
+        //q.SaveChanges();
+
+
         public ActionResult KategoriGetirme(int id)
         {
             var kategorii = q.Kategoris.Find(id);
@@ -46,10 +78,11 @@ namespace mvcOnlineTicariOtomasyon.Controllers
             var kategor = q.Kategoris.Find(b.KategoriID);
             kategor.KategoriAd = b.KategoriAd;
             q.SaveChanges();
+
+            TempData["kategoriguncelleme"] = "kayıt başarılı ";
             return RedirectToAction("Index");
 
         }
-
-
     }
+
 }

@@ -164,3 +164,14 @@ C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Deb
 C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.csproj.CopyComplete
 C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.dll
 C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.pdb
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\PagedList.dll
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\PagedList.Mvc.dll
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\PagedList.xml
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\PagedList.Mvc.xml
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.Migrations.denemekargo.resources
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.csproj.GenerateResource.cache
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\QRCoder.dll
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\Newtonsoft.Json.Bson.dll
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\Newtonsoft.Json.Bson.pdb
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\bin\Newtonsoft.Json.Bson.xml
+C:\Users\admin\Desktop\mvcOnlineTicariOtomasyon\mvcOnlineTicariOtomasyon\obj\Debug\mvcOnlineTicariOtomasyon.Migrations.denemeeee.resources

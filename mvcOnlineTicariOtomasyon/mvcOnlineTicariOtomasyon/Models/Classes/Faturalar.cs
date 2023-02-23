@@ -31,11 +31,16 @@ namespace mvcOnlineTicariOtomasyon.Models.Classes
         [Column(TypeName = "VarChar")]
         [StringLength(30)]
         public string TeslimAlan { get; set; }
-    
-        public DateTime FaturaSaat { get; set; }
+
+
+
+        [Column(TypeName = "VarChar")]
+        [StringLength(5)]
+        public string FaturaSaat { get; set; }
      
         public DateTime FaturaTarih { get; set; }
-    
+
+        public decimal FaturaToplam { get; set; }
         public ICollection<FaturaKalem> FaturaKalems { get; set; }
 
     }

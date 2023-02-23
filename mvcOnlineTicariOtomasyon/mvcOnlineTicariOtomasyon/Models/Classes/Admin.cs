@@ -13,9 +13,11 @@ namespace mvcOnlineTicariOtomasyon.Models.Classes
         public int AdminID { get; set; }
         [Column(TypeName = "VarChar")]
         [StringLength(10)]
+        [Display(Name ="Kullanıcı Adı")]
         public string KullaniciAdi { get; set; }
         [Column(TypeName = "VarChar")]
         [StringLength(30)]
+        [Display(Name = "Şifre")]
         public string Sifre { get; set; }
         [Column(TypeName = "Char")]
         [StringLength(1)]

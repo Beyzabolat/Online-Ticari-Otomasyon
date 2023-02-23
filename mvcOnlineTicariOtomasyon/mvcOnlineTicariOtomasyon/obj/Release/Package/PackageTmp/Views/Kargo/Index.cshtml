@@ -1,0 +1,90 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.Classes
+@model List<KargoDetay>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1 class="h3 mb-0 text-gray-800">Kargolar</h1>
+<br />
+
+
+<table id="tbl21" class="table table-striped">
+    <thead>
+        <tr>
+            <th>Personel</th>
+            <th>Alıcı</th>
+            <th>Takip Kodu</th>
+            <th>Tarih</th>
+            <th>Detay</th>
+
+        </tr>
+    </thead>
+
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.Personelid</td>
+            <td>@k.Alici</td>
+            <td>@k.TakipKodu</td>
+            <td>@k.tarih</td>
+            <td>
+                <a href="/Kargo/KargoTakip/@k.TakipKodu" class="btn btn-group"
+                   style="background-color: #35B8FF; color: white; ">Detaylar</a>
+            </td>
+        </tr>
+    }
+
+</table>
+<a href="/Kargo/YeniKargo" class="btn btn-info">Yeni Kargo</a>
+@using (Html.BeginForm("Index", "Kargo", FormMethod.Get))
+{
+    <p>
+        Kargo takip numarası: @Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </p>
+}
+
+
+
+@*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+<link href="~/websitesi/css/sb-admin-2.min.css" rel="stylesheet">
+@*<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>*@
+
+<link href="~/websitesi/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+<!-- Bootstrap core JavaScript-->
+<script src="~/websitesi/vendor/jquery/jquery.min.js"></script>
+<script src="~/websitesi/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Core plugin JavaScript-->
+<script src="~/websitesi/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+
+<!-- Page level plugins -->
+<script src="~/websitesi/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="~/websitesi/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+<!-- Page level custom scripts -->
+<script src="~/websitesi/js/demo/datatables-demo.js"></script>
+
+
+@*<link href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/responsive/2.1.1/css/responsive.bootstrap.min.css" rel="stylesheet" />
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap4.min.js "></script>*@
+
+<script>
+
+    $('#tbl21').DataTable({
+
+        "language": {
+
+            "url": "//cdn.datatables.net/plug-ins/1.10.12/i18n/Turkish.json"
+
+        }
+
+    });
+
+</script>

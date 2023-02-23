@@ -1,0 +1,43 @@
+﻿@using mvcOnlineTicariOtomasyon.Models.Classes
+@model List<mesajlar>
+@foreach (var x in Model)
+{
+    <div class="timeline timeline-inverse">
+
+        <!-- timeline time label -->
+
+        <div class="time-label">
+
+            <span class="bg-warning">
+
+                @x.tarih.ToShortDateString()
+
+            </span>
+
+        </div>
+
+        <!-- /.timeline-label -->
+        <!-- timeline item -->
+
+        <div>
+
+            <i class="fas fa-envelope bg-primary"></i>
+
+            <div class="timeline-item">
+
+                <h3 class="timeline-header"><a href="#">@x.Gonderici</a> sana bir email gönderdi</h3>
+
+                <div class="timeline-body">
+                    @x.İcerik
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+    </div>
+}

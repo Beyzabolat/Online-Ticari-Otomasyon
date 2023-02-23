@@ -15,6 +15,7 @@ namespace mvcOnlineTicariOtomasyon.Models.Classes
         public int SatisID { get; set; }
         public DateTime Tarih { get; set; }
         public int Adet { get; set; }
+        public int EskiAdet { get; set; }
         public decimal Fiyat { get; set; }
         public decimal ToplamTutar { get; set; }
 

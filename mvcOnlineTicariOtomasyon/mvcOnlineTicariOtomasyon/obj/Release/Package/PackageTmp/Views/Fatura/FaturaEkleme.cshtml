@@ -1,0 +1,36 @@
+﻿@model mvcOnlineTicariOtomasyon.Models.Classes.Faturalar
+@{
+    ViewBag.Title = "FaturaEkleme";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="h3 mb-0 text-gray-800">Fatura Ekleme Sayfası</h1>
+<br />
+
+<form class="form-group" method="post">
+    @Html.Label("Fatura Sıra No")
+    @Html.TextBoxFor(x => x.FaturaSıraNo, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+
+    @Html.Label("Fatura Seri No")
+    @Html.TextBoxFor(x => x.FaturaSeriNo, new { @class = "form-control" })
+    <br />
+    @Html.Label("Vergi Dairesi")
+    @Html.TextBoxFor(x => x.VergiDairesi, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    @Html.Label("Teslim Eden")
+    @Html.TextBoxFor(x => x.TeslimEden, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    @Html.Label("Teslim Alan")
+    @Html.TextBoxFor(x => x.TeslimAlan, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    @Html.Label("Saat")
+    @Html.TextBoxFor(x => x.FaturaSaat, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+    @Html.Label("Tarih")
+    @Html.TextBoxFor(x => x.FaturaTarih, new { @class = "form-control" })    @*lamda operation*@
+    <br />
+
+
+    <button class="btn btn-info">Kaydet</button>
+</form>
