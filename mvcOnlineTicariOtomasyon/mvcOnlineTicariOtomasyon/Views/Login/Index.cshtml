@@ -85,7 +85,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="clear"> </div>
         </div>
         <!-- copyright -->
-        <p class="agile-copyright">© 2022 Project. Tüm hakları saklıdır.</a></p>
+        <p class="agile-copyright"><a>© 2022 Project. Tüm hakları saklıdır.</a></p>
         <!-- //copyright -->
     </section>
     <!-- //section -->
@@ -123,16 +123,21 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
             <div class="login-form login-form-left">
                 <div class="agile-row">
-                    <h3>Personel Giriş Formu</h3>
+                    <h3>Admin Giriş Formu</h3>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
-                        @using (Html.BeginForm("Index5", "Grafik", FormMethod.Post))
+                        @*@using (Html.BeginForm("Index5", "Grafik", FormMethod.Post))
+                        {
+                            <input type="text" class="name" name="KullaniciAdi" Placeholder="Kullanıcı Adı" required="" />
+                            <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
+                            <input type="submit" value="Giriş">
+                        }*@
+                        @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
                         {
                             <input type="text" class="name" name="KullaniciAdi" Placeholder="Kullanıcı Adı" required="" />
                             <input type="password" class="password" name="Sifre" Placeholder="Şifre" required="" />
                             <input type="submit" value="Giriş">
                         }
-
                     </div>
                 </div>
             </div>
