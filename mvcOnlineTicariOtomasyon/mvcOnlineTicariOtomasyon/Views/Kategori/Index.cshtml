@@ -147,91 +147,6 @@
         });
    /* });*/
 </script>
-@* @section Scripts{
-        <link href="~/sweetalert2/sweetalert2.css" rel="stylesheet" />
-        <script src="~/sweetalert2/sweetalert2.all.js"></script>
-        <script src="~/sweetalert2/sweet-alert.init.js"></script>
-        <script src="~/Scripts/jquery-3.4.1.js"></script>
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script>
-            function functionConfirm(event) {
-                const swalWithBootstrapButtons = swal.mixin({
-                    customClass: {
-                        confirmButton: 'btn btn-success',
-                        cancelButton: 'btn btn-danger'
-                    },
-                    buttonsStyling: false
-                })
-                swalWithBootstrapButtons.fire({
-                        //title: "Silmek istediğinize emin misiniz?",
-                        //text: "Bu kategoriyi silerseniz geri alamayacaksınız!",
-                        //icon: "warning",
-                        //buttons: ["İptal", "Evet"],
-                        //dangerMode: true,
-                        //timer: 3000
-                        title: 'Emin misiniz?',
-                        text: "Bu işlem geri alınamaz!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonText: 'Evet, sil!',
-                        cancelButtonText: 'Hayır, iptal',
-                        reverseButtons: true,
-                        timer: 3000
-                    })
-                        .then((result) => {
-                            if (result.isConfirmed) {
-                                $("form").submit();
-
-                                swalWithBootstrapButtons.fire({
-                                    title: 'Silindi!',
-                                    text: 'Kategori silindi.',
-                                    icon: 'success',
-                                    timer: '2000'
-                                }
-                                )
-                            } else if (
-                                /* Read more about handling dismissals below */
-                                result.dismiss === Swal.DismissReason.cancel
-                            ) {
-                                swalWithBootstrapButtons.fire(
-                                    'İptal edildi',
-                                    '',
-                                    'error'
-                                )
-                            }
-                        })
-            }
-        </script>
-    }*@
-@*<link href="~/sweetalert2/sweetalert2.css" rel="stylesheet" />
-<script src="~/sweetalert2/sweetalert2.all.js"></script>
-<script src="~/sweetalert2/sweet-alert.init.js"></script>
-<script src="~/Scripts/jquery-3.4.1.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script>
-    function archiveFunction() {
-        swal({
-            title: "Are you sure?",
-            text: "But you will still be able to retrieve this file.",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#DD6B55",
-            confirmButtonText: "Yes, archive it!",
-            cancelButtonText: "No, cancel please!",
-            closeOnConfirm: false,
-            closeOnCancel: false
-        },
-           function (isConfirm) {
-                if (isConfirm) {
-                    swal("Deleted!", "Your imaginary file has been archived.", "success");
-                } else {
-                    swal("Cancelled", "Your imaginary file is safe :)", "error");
-                }
-            });
-    }
-</script>*@
-
-
 
 <h1 class="h3 mb-0 text-gray-800">Kategoriler</h1>
 <br />
@@ -257,21 +172,11 @@
             </td>
             <td>
                 <div>
-                    @*<form action="KategoriSilme" method="post">
-                        <input type="hidden" name="p_id" id="p_id" value="@b.KategoriID">
-                        <button class="btn btn-danger" type="submit" name="archive" onclick="archiveFunction()">
-                            <i class="fa fa-archive"></i>
-                            Archive
-                        </button>
-                    </form>*@
+                   
                     <button type="button" value="@b.KategoriID" class="btn btn-success" id="btn1">dlete</button>
-                    @*<button id="adressil" class="btn btn-danger adressil" data-id="@b.KategoriID">Sil</button>*@
-                    @*<form asp-action="Delete" method="post" asp-controller="Kategori" asp-route-id="@b.KategoriID"><input type="hidden" name="pid"  id="pid" value="@b.KategoriID"/><button class="btn btn-danger" name="archive"  onclick="archiveFunction()">
-
-        Delete</button></form>*@
+                  
                 </div>
 
-                @*<a href="/Kategori/KategoriSilme/@b.KategoriID" class="btn btn-danger">Sil</a>*@  @* kategorsilme burada çalışmayacak, onlick eventi sweealert çağıracak.*@
             </td>
 
             <td><a href="/Kategori/KategoriGetirme/@b.KategoriID" class="btn btn-success">Güncelle</a></td>
